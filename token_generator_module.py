@@ -21,5 +21,3 @@ def check_word(word : str, token: str) -> bool:
     word = base64.b64encode(hashlib.sha256(word).digest())
     return bcrypt.checkpw(word,token)
  
-#Check the password
-#bcrypt.checkpw(word, pass_hasheada)

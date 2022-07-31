@@ -1,10 +1,14 @@
 from pyparsing import Word
 from token_generator_module import generate_token, check_word
 
+from progress_bar import generate_load_bar
+
 from datetime import datetime as dt
 
+import time
+
 def main() -> None:
-    print("\t\t<<-------Token Generator-------->>\n")
+    generate_load_bar()
     now = str(dt.now())
     print("\t\t Date: " + now + "\n")
 
@@ -18,6 +22,7 @@ def main() -> None:
 
     if (check_word(word,token)):
         print('Cifrado funciona correctamente')
+    time.sleep(5)
 
 
 if __name__ == '__main__':
