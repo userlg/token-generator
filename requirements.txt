@@ -1,0 +1,5 @@
+bcrypt==3.2.2
+cffi==1.15.1
+colorama==0.4.5
+pycparser==2.21
+pyparsing==3.0.9
