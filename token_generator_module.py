@@ -16,7 +16,7 @@ def generate_token(word : str) -> str:
 
     return word_hashed
 
-def check_word(word : str, token: str) -> bool:
+def check_token(word : str, token: str) -> bool:
     word = word.encode('utf-8')
     word = base64.b64encode(hashlib.sha256(word).digest())
     return bcrypt.checkpw(word,token)

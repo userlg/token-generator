@@ -1,9 +1,6 @@
-from pyparsing import Word
-from token_generator_module import generate_token, check_word
-
 from progress_bar import generate_load_bar
 
-from modules import menu
+from modules import menu, yellow, encrypt_operation, generate_file
 
 from datetime import datetime as dt
 
@@ -19,19 +16,14 @@ def main() -> None:
 
        option = menu()
 
+       if option == '1':
+         generate_file(encrypt_operation())
+
        if (option == '2'):
-          word = ''
-          while(len(word) < 6):
-             word = input('Introduzca palabra o expresion (Debe contener min 6 caracteres) \n\t')
-
-          token = generate_token(word)
-          print(token)
-
-          if (check_word(word,token)):
-             print('Cifrado funciona correctamente')
+        encrypt_operation()
+          
     
-     
-    print('\t\t  Thanks for use this application, see ya!!')
+    print(yellow + '\t\t  Thanks for use this application, see ya!!')
     time.sleep(5)
 
 
